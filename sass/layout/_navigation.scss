@@ -1,4 +1,5 @@
 .navigation{
+    height: 0;
     &__label{
         display: inline-block;
         height: 6rem;
@@ -10,6 +11,20 @@
         border-radius: 50%;
         z-index: 200;
     }
+    &__input:checked ~ &__background{
+        transform: scale(50);
+
+    }
+    &__input:checked ~ &__nav{
+        opacity: 1;
+        height: 100%;
+        width: 100%;
+        visibility: visible;
+    }
+    &__input{
+        visibility: hidden;
+    }
+
     &__background{
         display: inline-block;
         height: 7rem;
@@ -17,21 +32,32 @@
         position: fixed;
         top:6rem;
         right: 6rem;
+        transition: all .8s;
         background-image:radial-gradient($Light-green,$Dark-green);
         border-radius: 50%;
         z-index: 100;
-        transform: scale(50);
 
     }
-    &__list{
+    &__nav{
         display: inline-block;
-        list-style: none;
+         position: fixed;
+        top:0;
+        left:0;
+        z-index: 150;
+        opacity: 0;
+        transition: all .5s cubic-bezier(0.68,-0.55,0.265,1.55);
+        height: 100%;
+         width: 0;
+        visibility: hidden;
+    }
+    &__list{
         position: absolute;
         top:50%;
         left:50%;
         transform: translate(-50%,-50%);
-        z-index: 150;
         text-align: center;
+        list-style: none;
+        width: 100%;
     }
     &__item{
         .navigation__link{
