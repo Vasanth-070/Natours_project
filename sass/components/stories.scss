@@ -11,9 +11,34 @@
     font-style: lato;
     transform: skewX(-12deg);
     z-index: 1;
+    @include respond(tab-port)
+    {
+      width:100%;
+      transform: skewX(-8deg);
+      padding: 6rem;
+    }
+    @include respond(phone)
+    {
+      width:100%;
+      transform: skewX(-3deg);
+      margin-bottom: 1rem;
+      padding: 4rem;
+    }
    
     & > *{
       transform: skewX(12deg);
+      @include respond(tab-port)
+    {
+      width:100%;
+      transform: skewX(-8deg);
+    }
+
+    @include respond(phone)
+    {
+      width:100%;
+      transform: skewX(-3deg);
+      margin-bottom: 1rem;
+    }
      
          }
     &__shape{
@@ -27,6 +52,14 @@
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skewX(12deg) ;
         overflow: hidden;
+        @include respond(tab-port)
+        {
+          transform: translateX(-3rem) skewX(-8deg) ;
+        }
+        @include respond(tab-port)
+        {
+          transform: translateX(-3rem) skewX(-3deg) ;
+        }
     }
     &__image{
         height: 100%;

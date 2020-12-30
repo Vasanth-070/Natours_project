@@ -16,4 +16,10 @@
         transform: translateY(-1.5rem) scale(1.03);
         backface-visibility: hidden;
     }
+    @include respond(phone)
+    {
+      width: 60%;
+      margin: auto;
+    }
+    
 }

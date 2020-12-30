@@ -2,7 +2,15 @@
   //  background-color: orange;
     margin:0 auto;
     max-width: 114rem;
-    
+   
+    @include respond(tab-land)
+    {
+        padding: 0 2rem;
+    }
+    @include respond(tab-port)
+    {
+        max-width: 50rem;
+    }
     &:not(:last-child)
 {
     margin-bottom: $vertical-gutter;
@@ -14,6 +22,12 @@
     {
       margin-right: $horizontal-gutter;  
     }
+    @include respond(tab-port)
+    {
+        margin-right: 0;
+        margin-bottom: $vertical-gutter-small;
+        width: 100% !important;
+    }
 }
   @include clearfix;
    .col-1-of-2{
@@ -22,6 +36,11 @@
    }
    .col-1-of-3{
     width: calc((100% - 2 * ( #{$horizontal-gutter}))/ 3);
+    @include respond(tab-port)
+    {
+        margin-right: 6rem;
+        margin-left: 3rem;
+    }
 
    }
    .col-2-of-3{

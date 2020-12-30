@@ -10,6 +10,39 @@
         background-color: $color-white;
         border-radius: 50%;
         z-index: 200;
+        @include respond(tab-port)
+        {
+            top:4.5rem;
+            right: 4.5rem;
+        }
+        @include respond(phone)
+        {
+            height:5rem;
+            width:5rem;
+        }
+    }
+    &__background{
+        display: inline-block;
+        height: 7rem;
+        width:7rem;
+        position: fixed;
+        top:6rem;
+        right: 6rem;
+        transition: all .8s;
+        visibility: hidden;
+        background-image:radial-gradient($Light-green,$Dark-green);
+        border-radius: 50%;
+        z-index: 100;
+        @include respond(tab-port)
+        {
+            top:4rem;
+            right: 4rem;
+        }
+        @include respond(phone)
+        {
+            height:6rem;
+            width:6rem;
+        }
     }
     &__label:hover{
         cursor: pointer;
@@ -75,20 +108,7 @@
     &__input:checked + &__label &__lines{
         background-color: transparent;
     }
-    &__background{
-        display: inline-block;
-        height: 7rem;
-        width:7rem;
-        position: fixed;
-        top:6rem;
-        right: 6rem;
-        transition: all .8s;
-        visibility: hidden;
-        background-image:radial-gradient($Light-green,$Dark-green);
-        border-radius: 50%;
-        z-index: 100;
-
-    }
+    
     &__nav{
         display: inline-block;
          position: fixed;
